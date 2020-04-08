@@ -1,0 +1,13 @@
+output.elasticsearch:
+  hosts: ["http://es01:9200","http://es02:9200","http://es03:9200"]
+  username: "elastic"
+  password: "changeme"
+setup.kibana:
+  host: "http://kibana:5601"
+metricbeat.modules:
+  - module: kafka
+    metricsets:
+     - partition
+     - consumergroup
+    period: 10s
+    hosts: ["kafka1:9092","kafka2:9093","kafka3:9094"]
