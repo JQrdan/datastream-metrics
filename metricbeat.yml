@@ -9,8 +9,11 @@ metricbeat.modules:
     metricsets:
      - partition
      - consumergroup
-     - broker
-     - producer
-     - consumer
     period: 10s
     hosts: ["kafka1:9092","kafka2:9093","kafka3:9094"]
+  - module: kafka
+    metricsets:
+      - broker
+      - producer
+      - consumer
+    hosts: ["kafka1:8777","kafka2:8778","kafka1:8779"]
